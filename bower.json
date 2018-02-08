@@ -10,7 +10,9 @@
     "angular-route": "1.6.0",
     "angular-sanitize": "1.6.0",
     "angular-touch": "1.6.0",
-    "angular-ui-router": "^1.0.14"
+    "angular-ui-router": "^1.0.14",
+    "sweetalert2": "^7.9.2",
+    "angularjs-social-login": "^2.6.1"
   },
   "devDependencies": {
     "angular-mocks": "1.6.0"
