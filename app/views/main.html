@@ -1,50 +1,62 @@
-<form class="form-horizontal" ng-show="form.show">
-  <div class="alert alert-danger" role="alert" ng-show="alert.show"> <strong>{{alert.title}}</strong>{{alert.message}}</div>
-  <div class="form-group">
-    <label for="firstname" class="col-sm-4 control-label">Nombres</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" id="firstname" placeholder="Nombres" ng-model="user.firstName">
-    </div>
+<div class="page-header">
+  <h3>Registro</h3>
+</div>
+<div class="responsive-form block-center">
+  <div class="login-group homepage_admin light-wrap">
+    <form class="form-horizontal">
+      <div class="alert alert-danger" role="alert" ng-show="alert.show"> <strong>{{alert.title}}</strong>{{alert.message}}</div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="firstname" placeholder="Nombres" ng-model="user.firstName">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="lastname" placeholder="Apellidos" ng-model="user.lastName">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="email" class="form-control" id="email" placeholder="example@example.com" ng-model="user.email">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="username" placeholder="nombredeusuario" ng-model="user.username">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="password" class="form-control" id="password" placeholder="Password" ng-model="user.password"  ng-blur="verifyPassword()">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="password" class="form-control" id="password2" placeholder="Password2" ng-model="user.password2" ng-change="verifyPassword()">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-8">
+          <div class="row">
+            <div class="col-sm-12 btn btn-success" ng-click="registerUser()" ng-disabled="alert.show" >
+              Crear una cuenta
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row group-social">
+        <p class="text-center small msB mlT psT boundT">O conectar con:</p>
+        <div fb-login class="col-sm-offset-2 col-md-4">
+          <a class="btn btn-facebook btn-social" data-analytics="SignupFacebook" data-attr1="master" data-attr2="Signup">
+            <i class="fab fa-facebook-f"></i>Facebook
+          </a>
+        </div>
+        <div g-login class="col-md-4">
+          <a class="btn btn-google btn-social" data-analytics="SignupFacebook" data-attr1="master" data-attr2="Signup">
+            <i class="fab fa-google"></i>Google
+          </a>
+        </div>
+      </div>
+    </form>
   </div>
-  <div class="form-group">
-    <label for="lastname" class="col-sm-4 control-label">Apellidos</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" id="lastname" placeholder="Apellidos" ng-model="user.lastName">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="email" class="col-sm-4 control-label">Correo Electronico</label>
-    <div class="col-sm-8">
-      <input type="email" class="form-control" id="email" placeholder="example@example.com" ng-model="user.email">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="username" class="col-sm-4 control-label">Nombre de usuario</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" id="username" placeholder="nombredeusuario" ng-model="user.username">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="password" class="col-sm-4 control-label">Contraseña</label>
-    <div class="col-sm-8">
-      <input type="password" class="form-control" id="password" placeholder="Password" ng-model="user.password"  ng-blur="verifyPassword()">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="password2" class="col-sm-4 control-label">Confirmar Contraseña</label>
-    <div class="col-sm-8">
-      <input type="password" class="form-control" id="password2" placeholder="Password2" ng-model="user.password2" ng-change="verifyPassword()">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-4 col-sm-8">
-      <button type="button" class="btn btn-success" ng-click="registerUser()" ng-disabled="alert.show">Registrar</button>
-    </div>
-  </div>
-</form>
-<div>
-  <button g-login type="button">Google Login</button>
-  <button type="button" ng-click="logoutGoogle()">Logout</button>
-  <button fb-login type="button">facebook Login</button>
-  <button fb-login type="button" ng-click="showForm()">Email Login</button>
 </div>

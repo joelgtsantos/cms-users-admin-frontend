@@ -1,0 +1,56 @@
+<div class="page-header">
+  <h3>Información importante <small>paso 1/2</small></h3>
+</div>
+<div class="responsive-form block-center">
+  <div class="login-group homepage_admin light-wrap">
+    <form class="form-horizontal">
+      <div class="alert alert-danger" role="alert" ng-show="alert.show"> <strong>{{alert.title}}</strong>{{alert.message}}</div>
+      <div class="form-group birthdate">
+      	<div class="col-sm-12">
+      		<label for="exampleInputEmail1">Fecha de nacimiento</label>
+	    </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="dd" placeholder="DD" ng-model="user.dd">
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="mm" placeholder="MM" ng-model="user.mm">
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="yyyy" placeholder="YYYY" ng-model="user.yyyy">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="study" placeholder="Centro de estudios" ng-model="user.study">
+        </div>
+      </div>
+      <div class="form-group">
+	      <div class="checkbox col-sm-12">
+		    <label>
+		      <input type="checkbox"> *¿Está interesado en una bolsa de trabajo?
+		    </label>
+		  </div>
+      </div>
+      <div class="form-group">
+      	<div class="col-sm-6">
+      		<label class="file-name">{{user.file.name}}</label>
+     	</div>
+        <label class="col-sm-4 btn btn-info" ng-click="registerUser()" ng-disabled="alert.show" for="file-upload">
+          Adjuntar CV 
+        </label>
+     	<input id="file-upload" type="file" fileread="user.file"/>
+	  </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-8">
+          <div class="row">
+            <div class="col-sm-12 btn btn-success" ng-click="registerUser()" ng-disabled="alert.show" >
+              Actualizar datos
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

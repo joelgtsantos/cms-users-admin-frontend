@@ -19,7 +19,7 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  /*border-bottom: 1px solid #e5e5e5;*/
   margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */
@@ -80,4 +80,104 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
+  .group-social{
+    text-align: center;
+    font-size: 13pt;
+  }
+
+  .btn-social{
+    display: inline-block;
+    padding: 0;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    padding-right: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: left;
+    min-width: 110px;
 }
+  }
+
+  .btn-social i {
+    background: rgba(0,0,0,0.075);
+    display: inline-block;
+    padding: 0 4px 0 8px;
+    margin-right: 8px;
+    border-radius: 5px 0 0 5px;
+    top: 0;
+    line-height: 40px;
+  }
+
+  .btn-facebook, .btn-facebook:hover, .btn-facebook:active {
+    background: #3b5998;
+    color: #fff;
+  }
+
+  .btn-google, .btn-google:hover, .btn-google:active{
+    background: #DD4B39;
+    color: #fff;
+  }
+
+  .block-center {
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .responsive-form .homepage_admin {
+    width: 70%;
+    max-width: 450px;
+  }
+
+  .homepage_admin {
+    background: white;
+    width: 450px;
+    margin: 5px auto 30px;
+    padding: 30px;
+    position: relative;
+  }
+
+  .boundT {
+    border-top: 1px solid #C2C7D0;
+  }
+
+  .birthdate{
+    margin-bottom: -2px!important;
+  }
+
+  input[type="file"] {
+      display: none;
+  }
+
+  .cv-file-upload {
+      border: 1px solid #ccc;
+      display: inline-block;
+      padding: 6px 12px;
+      cursor: pointer;
+  }
+
+  .page-header {
+    padding-bottom: 0px;
+    margin: 0px 0 0px;
+    border-bottom: 1px solid #eee;
+  }
+
+  h3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .upload{
+    margin-left: 15px;
+  }
+
+  .file-name{
+    display: inline-block;
+    overflow: hidden;
+    padding: 6px 0px;
+    text-align: center;
+    white-space: nowrap;
+  }
