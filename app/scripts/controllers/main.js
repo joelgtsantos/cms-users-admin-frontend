@@ -8,14 +8,14 @@
  * Controller of the usersAdminApp
  */
 angular.module('usersAdminApp')
-  .controller('MainCtrl', function ($scope, mainService, socialLoginService) {
+  .controller('MainCtrl', function ($scope, mainService, socialLoginService, $window) {
   	$scope.user = {};
   	$scope.alert = {show: false, title: "", message: ""};
   	var messages = {};
   	messages.password = {title: "Alerta!", message: " Las contraseñas no coinciden!"};
   	$scope.form = {show: false};
 
-
+    console.log($window.localStorage.getItem('_login_provider'));
   	/*
   	*@user
   	*@participation

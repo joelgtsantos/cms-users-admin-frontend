@@ -29,15 +29,15 @@
       <div class="form-group">
 	      <div class="checkbox col-sm-12">
 		    <label>
-		      <input type="checkbox"> *¿Está interesado en una bolsa de trabajo?
+		      <input type="checkbox" ng-model="user.work"> *¿Está interesado en una bolsa de trabajo?
 		    </label>
 		  </div>
       </div>
       <div class="form-group">
-      	<div class="col-sm-6">
-      		<label class="file-name">{{user.file.name}}</label>
-     	</div>
-        <label class="col-sm-4 btn btn-info" ng-click="registerUser()" ng-disabled="alert.show" for="file-upload">
+      	<div class="col-sm-6 file-name-box">
+      		<label class="file-name">{{user.file.filename}}</label>
+     	  </div>
+        <label class="col-sm-4 btn btn-info" ng-click="" ng-disabled="alert.show" for="file-upload">
           Adjuntar CV 
         </label>
      	<input id="file-upload" type="file" fileread="user.file"/>
@@ -45,7 +45,7 @@
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-8">
           <div class="row">
-            <div class="col-sm-12 btn btn-success" ng-click="registerUser()" ng-disabled="alert.show" >
+            <div class="col-sm-12 btn btn-success" ng-click="saveInforUser()" ng-disabled="alert.show" >
               Actualizar datos
             </div>
           </div>

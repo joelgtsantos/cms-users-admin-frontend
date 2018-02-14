@@ -44,9 +44,44 @@ angular.module('usersAdminApp')
 	    return defer.promise;
 	}
 
+	function addUserExtra(user) {
+		var defer = $q.defer();
+
+	    $http({
+	    	method:"POST",
+            url: ctxPath + "user/extra",
+            data: user,                
+            headers: {'Content-Type': 'application/json'}
+	    }).then(function(response) {
+	    	defer.resolve(response.data);
+	    });
+	    
+	    return defer.promise;
+	}
+
+	function uploadFile(user) {
+		var defer = $q.defer();
+		user.file = user.file.split(',')[1];
+
+	    $http({
+	    	method:"POST",
+            url: ctxPath + "user/file",
+            data: user,                
+            headers: {'Content-Type': 'application/json'}
+	    }).then(function(response) {
+	    	defer.resolve(response.data);
+	    });
+	    
+	    return defer.promise;
+	}
+
 	// expose a public API
 	return {
 		registerUser: registerUser,
-		addUserParticipation: addUserParticipation
+		addUserParticipation: addUserParticipation,
+		uploadFile: uploadFile,
+		addUserExtra: addUserExtra
 	};
+
+
   });
