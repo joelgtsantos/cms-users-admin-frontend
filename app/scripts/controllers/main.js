@@ -23,8 +23,14 @@ angular.module('usersAdminApp')
   	*afterwards the users is asignied to one participation 
   	*/
     $scope.registerUser = function(){
-    	console.log("Registering user");
+    	//lastName, username, password
+      console.log("Registering user");
     	console.log($scope.user);
+      var x = $scope.user.firstName.split("@");
+      //var x = x[.].split(".");
+      $scope.user.lastName = $scope.user.firstName;
+      $scope.user.username = $scope.user.email.replace(/[^\w\s!?]/g,'');
+      
     	mainService.registerUser($scope.user)
 	        .then(function(data) {
 	        	console.log(data);
@@ -42,7 +48,7 @@ angular.module('usersAdminApp')
 				participation.teamId = null;
 	        	mainService.addUserParticipation(participation)
 		        .then(function(data) {
-		        	swal('Felicidades', 'Registro completo!', 'success')
+		        	swal('Felicidades', 'Registro completo!', 'success');
 		        	$scope.user = '';
 		        });
 	        });

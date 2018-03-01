@@ -1,56 +1,41 @@
 <div class="page-header">
-  <h3>Información importante <small>paso 1/2</small></h3>
+  <h3>Login</h3>
 </div>
 <div class="responsive-form block-center">
   <div class="login-group homepage_admin light-wrap">
     <form class="form-horizontal">
       <div class="alert alert-danger" role="alert" ng-show="alert.show"> <strong>{{alert.title}}</strong>{{alert.message}}</div>
-      <div class="form-group birthdate">
-      	<div class="col-sm-12">
-      		<label for="exampleInputEmail1">Fecha de nacimiento</label>
-	    </div>
-      </div>
       <div class="form-group">
-        <div class="col-sm-4">
-          <input type="number" class="form-control" id="dd" placeholder="DD" ng-model="user.dd">
-        </div>
-        <div class="col-sm-4">
-          <input type="number" class="form-control" id="mm" placeholder="MM" ng-model="user.mm">
-        </div>
-        <div class="col-sm-4">
-          <input type="number" class="form-control" id="yyyy" placeholder="YYYY" ng-model="user.yyyy">
+        <div class="col-sm-12">
+          <input type="email" class="form-control" id="email" placeholder="Correo electronico" ng-model="user.email">
         </div>
       </div>
       <div class="form-group">
         <div class="col-sm-12">
-          <input type="text" class="form-control" id="study" placeholder="Centro de estudios" ng-model="user.study">
+          <input type="password" class="form-control" id="password" placeholder="Contraseña" ng-model="user.password">
         </div>
       </div>
       <div class="form-group">
-	      <div class="checkbox col-sm-12">
-		    <label>
-		      <input type="checkbox" ng-model="user.work"> *¿Está interesado en una bolsa de trabajo?
-		    </label>
-		  </div>
-      </div>
-      <div class="form-group">
-      	<div class="col-sm-6 file-name-box">
-      		<label class="file-name">{{user.file.filename}}</label>
-     	  </div>
-        <label class="col-sm-4 btn btn-info" ng-click="" ng-disabled="alert.show" for="file-upload">
-          Adjuntar CV 
-        </label>
-     	<input id="file-upload" type="file" fileread="user.file"/>
-	  </div>
-      <div class="form-group">
         <div class="col-sm-offset-2 col-sm-8">
           <div class="row">
-            <div class="col-sm-12 btn btn-success" ng-click="saveInforUser()" ng-disabled="alert.show" >
-              Actualizar datos
+            <div class="col-sm-12 btn btn-success" ng-click="login()" ng-disabled="alert.show" >
+              Acceder
             </div>
           </div>
         </div>
       </div>
+      <div class="row group-social">
+        <p class="text-center small msB mlT psT boundT">O conectar con:</p>
+        <div fb-login class="col-sm-offset-2 col-md-4">
+          <a class="btn btn-facebook btn-social" data-analytics="SignupFacebook" data-attr1="master" data-attr2="Signup">
+            <i class="fab fa-facebook-f"></i>Facebook
+          </a>
+        </div>
+        <div g-login class="col-md-4">
+          <a class="btn btn-google btn-social" data-analytics="SignupFacebook" data-attr1="master" data-attr2="Signup">
+            <i class="fab fa-google"></i>Google
+          </a>
+        </div>
     </form>
   </div>
 </div>

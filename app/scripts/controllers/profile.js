@@ -8,7 +8,7 @@
  * Controller of the usersAdminApp
  */
 angular.module('usersAdminApp')
-  .controller('AboutCtrl', function ($scope, mainService) {
+  .controller('ProfileCtrl', function ($scope, mainService) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
