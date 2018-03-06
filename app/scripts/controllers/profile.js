@@ -8,7 +8,7 @@
  * Controller of the usersAdminApp
  */
 angular.module('usersAdminApp')
-  .controller('ProfileCtrl', function ($scope, mainService) {
+  .controller('ProfileCtrl', function ($scope, mainService, $stateParams) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -19,14 +19,17 @@ angular.module('usersAdminApp')
     $scope.user.file = {};
     $scope.user.file.filename = "Ningun archivo";
 
+
+
     $scope.saveInforUser = function(){
       var user = {};
+
+      //console.log($stateParams.id);
 
       user.birthdate = new Date($scope.user.dd + "/" + $scope.user.mm + "/" + $scope.user.yyyy); 
       user.study = $scope.user.study;
       user.work = ($scope.user.work == true? "S" : "N");
-      user.userId = 1;
-
+      user.userId = $stateParams.id;
 
       //Extra Info
       mainService.addUserExtra(user)

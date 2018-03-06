@@ -28,7 +28,7 @@ angular.module('usersAdminApp')
           if(data == null || data == ""){
             swal('Atención', 'Correo electronico y contraseña no coinciden!', 'error')
           }else{
-            $state.go("^.profile", {idUser:data.idUser});
+            $state.go("^.profile", {id:data.id});
           }
       });
     }

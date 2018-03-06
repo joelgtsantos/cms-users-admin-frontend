@@ -36,7 +36,7 @@ angular
 
       var profileState = {
         name: 'profile',
-        url: '/profile',
+        url: '/profile/:id',
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl'
       }
