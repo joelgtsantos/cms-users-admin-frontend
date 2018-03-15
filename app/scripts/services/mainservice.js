@@ -88,8 +88,8 @@ angular.module('usersAdminApp')
 		user.file = user.file.split(',')[1];
 
 	    $http({
-	    	method:"POST",
-            url: ctxPath + "user/file",
+	    	method:"PUT",
+            url: ctxPath + "user/extra/file",
             data: user,                
             headers: {'Content-Type': 'application/json'}
 	    }).then(function(response) {
@@ -117,7 +117,7 @@ angular.module('usersAdminApp')
 
 	// expose a public API
 	return {
-		socialRegister, socialRegister,
+		socialRegister: socialRegister,
 		registerUser: registerUser,
 		addUserParticipation: addUserParticipation,
 		uploadFile: uploadFile,

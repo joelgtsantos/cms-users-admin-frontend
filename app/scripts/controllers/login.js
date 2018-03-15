@@ -9,12 +9,6 @@
  */
 angular.module('usersAdminApp')
   .controller('LoginCtrl', function ($scope, mainService, $state) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
     $scope.user = {};
     $scope.user.file = {};
     $scope.user.file.filename = "Ningun archivo";
@@ -24,13 +18,12 @@ angular.module('usersAdminApp')
       //Login
       mainService.login($scope.user)
         .then(function(data) {
-          console.log(data);
-          if(data == null || data == ""){
-            swal('Atención', 'Correo electronico y contraseña no coinciden!', 'error')
+          if(data === null || data === ''){
+            swal('Atención', 'Correo electronico y contraseña no coinciden!', 'error');
           }else{
             $state.go("^.profile", {id:data.id});
           }
       });
-    }
+    };
 
   });

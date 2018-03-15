@@ -24,12 +24,13 @@ angular.module('usersAdminApp')
     $scope.saveInforUser = function(){
       var user = {};
 
-      //console.log($stateParams.id);
-
       user.birthdate = new Date($scope.user.dd + "/" + $scope.user.mm + "/" + $scope.user.yyyy); 
       user.study = $scope.user.study;
-      user.work = ($scope.user.work == true? "S" : "N");
-      user.userId = $stateParams.id;
+      user.work = ($scope.user.work === true? 'S' : 'N');
+      user.id = $stateParams.id;
+      user.cv = $scope.user.file.file.split(',')[1];//filename
+      user.filename = $scope.user.file.filename;
+      console.log(user.cv);
 
       //Extra Info
       mainService.addUserExtra(user)
@@ -39,8 +40,11 @@ angular.module('usersAdminApp')
         mainService.uploadFile($scope.user.file)
           .then(function(file) {
             console.log(data);
+            $scope.user.file = {};
+            $scope.user.file.filename = "Ningun archivo";
+            swal('', 'Perfil actualizado!', 'success');
         });    
       });
-    }
+    };
 
   });
